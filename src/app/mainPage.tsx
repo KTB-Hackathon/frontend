@@ -34,9 +34,9 @@ const MainPage: React.FC = () => {
       </Slider>
       <div className="overlay">
         <div className="content">
-          <p className="title">충-저니</p>
+          <p className="title">충저니🔋</p>
           <div className="button-container">
-            <Link to="/themeSelector" className="button">
+            <Link to="/pickCity" className="button">
               여행지 추천 받기
             </Link>
           </div>
