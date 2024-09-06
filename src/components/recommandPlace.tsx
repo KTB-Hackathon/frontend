@@ -8,7 +8,7 @@ interface recommendPlaceProps {
     tag: string
 }
 
-const RecommendPlace: React.FC<recommendPlaceProps> = ({ key, imageURL, name, description, tag}) => {
+const RecommendPlace: React.FC<recommendPlaceProps> = ({imageURL, name, description, tag}) => {
     return (
             <div className={'flex flex-col bg-white rounded-bl'}>
                 <div className="w-full h-[400px]">

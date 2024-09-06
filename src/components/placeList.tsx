@@ -7,7 +7,7 @@ interface placeListProps {
     key: number
 }
 
-const PlaceList: React.FC<placeListProps> = ({key, imageURL, name, description}) => {
+const PlaceList: React.FC<placeListProps> = ({imageURL, name, description}) => {
     return (
         <div className="bg-navy-blue text-white p-4">
             <div className="flex flex-col w-full h-40 p-4 mb-4 mx-auto">

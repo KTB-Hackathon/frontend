@@ -1,15 +1,6 @@
-import React, {useEffect} from 'react'
-import PlaceList from '../components/placeList.tsx'
+import React from 'react'
 import KakaoMap from '../components/map.tsx'
 import ChatBubble from "../components/chatBubble.tsx";
-
-const dummyData = [
-    { id: 1, name: '장소1', description: '장소1의 설명글입니다\n', imageURL: 'https://placehold.co/200x300' },
-    { id: 2, name: '장소2', description: '장소2의 설명글입니다\n', imageURL: 'https://placehold.co/150x150' },
-    { id: 3, name: '장소3', description: '장소3의 설명글입니다\n', imageURL: 'https://placehold.co/150x150' },
-    { id: 4, name: '장소4', description: '장소4의 설명글입니다\n', imageURL: 'https://placehold.co/150x150' },
-    { id: 5, name: '장소5', description: '장소5의 설명글입니다\n나는기다란설명글', imageURL: 'https://placehold.co/150x150' },
-];
 
 const chatBubbleText = "추천해드린 관광코스는 각 지역의 대표적인 명소들을 포함하고 있어 매우 흥미로운 여행이 될 것입니다. 아래에 각 장소에 대한 추가 정보를 제공해드리겠습니다:\n" +
     "\n" +
@@ -35,16 +26,6 @@ const PlannedPlace:React.FC = () => {
             <div className="flex justify-center items-center mb-8">
                 <KakaoMap/>
             </div>
-            {/*<div className="grid grid-cols-2 gap-2 mb-6 w-1/2">*/}
-            {/*    {dummyData.map(place => (*/}
-            {/*        <PlaceList*/}
-            {/*            key={place.id}*/}
-            {/*            name={place.name}*/}
-            {/*            description={place.description}*/}
-            {/*            imageURL={place.imageURL}*/}
-            {/*        />*/}
-            {/*    ))}*/}
-            {/*</div>*/}
             <ChatBubble text={chatBubbleText} />
         </div>
     )
