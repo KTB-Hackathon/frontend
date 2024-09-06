@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './mainPage.css';
 
-// 이미지 import 문은 실제 파일 경로에 맞게 수정해야 합니다.
 import slide1 from '/slide1.png';
 import slide2 from '/slide2.png';
 
