@@ -52,7 +52,7 @@ const TypeSelector3: React.FC = () => {
         {/* 위쪽 영역 (자동차) */}
         <div 
           className="h-1/2 flex flex-col items-center justify-center border-b-2 border-black cursor-pointer hover:bg-gray-200 transition-all"
-          onClick={() => handleNavigation("/loading")} 
+          onClick={() => handleNavigation("/placeSelector")} 
         >
           {/* 자동차 정보 */}
           <div className="mb-4 text-center">
@@ -71,7 +71,7 @@ const TypeSelector3: React.FC = () => {
         {/* 아래쪽 영역 (도보) */}
         <div 
           className="h-1/2 flex flex-col items-center justify-center  cursor-pointer hover:bg-gray-200 transition-all"
-          onClick={() => handleNavigation("/loading")} 
+          onClick={() => handleNavigation("/placeSelector")} 
         >
           {/* 도보 정보 */}
           <div className="mb-4 text-center">
@@ -85,7 +85,7 @@ const TypeSelector3: React.FC = () => {
             alt={`${themes[1].name} 이미지`}
             className="w-32 h-32 object-cover"
           />
-           <NavButton direction="right" link="/loading" />
+           <NavButton direction="right" link="/placeSelector" />
            <NavButton direction="left" link="/typeSelector3" />
         </div>
       </div>
