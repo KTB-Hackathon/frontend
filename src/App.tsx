@@ -10,6 +10,8 @@ import TypeSelector2 from './app/typeSelector/typeSelector2';
 import TypeSelector3 from './app/typeSelector/typeSelector3';
 import TypeSelector4 from './app/typeSelector/typeSelector4';
 import Loading from './app/loading';
+import PlaceSelectPage from './app/placeSelector.tsx'
+import PlannedPlace from "./app/plannedPlace.tsx";
 
 
 const App: React.FC = () => {
@@ -24,7 +26,9 @@ const App: React.FC = () => {
         <Route path="/typeSelector2" element={<TypeSelector2 />} />
         <Route path="/typeSelector3" element={<TypeSelector3 />} />
         <Route path="/typeSelector4" element={<TypeSelector4 />} />
-        <Route path="/loading" element={<Loading />} /> 
+        <Route path="/loading" element={<Loading />} />
+        <Route path="/placeSelector" element={<PlaceSelectPage />} />
+        <Route path="/planned" element={<PlannedPlace />} />
       </Routes>
     </Router>
   );
