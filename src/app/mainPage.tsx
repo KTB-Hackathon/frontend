@@ -33,7 +33,9 @@ const MainPage: React.FC = () => {
       </Slider>
       <div className="overlay">
         <div className="content">
-          <p className="title">충저니🔋</p>
+          <p className="title">
+            <img src="/logoWhite.png" alt="충-저니 로고" className='logo'/>
+          </p>
           <div className="button-container">
             <Link to="/pickCity" className="button">
               여행지 추천 받기

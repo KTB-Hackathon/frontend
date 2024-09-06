@@ -18,7 +18,7 @@ const CityButton: React.FC<CityButtonProps> = ({ buttons }) => {
         <div key={index} className="w-1/4 px-2 py-2">
           <button
             onClick = {() => navigate(button.path)}
-            className = "w-full px-4 py-2 text-white rounded-full hover:bg-gray-600"
+            className="w-full px-4 py-2 text-white rounded-full hover:bg-gray-600 border-2 border-white"
           >
             {button.label}
           </button>
