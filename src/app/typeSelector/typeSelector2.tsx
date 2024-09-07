@@ -30,9 +30,9 @@ const TypeSelector2: React.FC = () => {
   const totalSlides = 5;
   const currentSlide = 3;
 
-  const handleNavigation = (path: string) => {
-    navigate(path);
-  };
+  const handleSelection = (selection: number) => {
+    navigate('/typeSelector3', { state: { selection1: selection } });
+  }
   
   return (
     <div className="flex h-screen">
@@ -51,26 +51,25 @@ const TypeSelector2: React.FC = () => {
       {/* 오른쪽 영역 */}
       <div className="w-1/2 bg-white p-8 flex flex-col justify-between">
         {/* 위쪽 영역 */}
-        <div 
-          className="h-1/2 flex flex-col items-center justify-center border-b-2 border-black cursor-pointer hover:bg-gray-200 transition-all"
-          onClick={() => handleNavigation("/typeSelector3")} 
+        <div
+            className="h-1/2 flex flex-col items-center justify-center border-b-2 border-black cursor-pointer hover:bg-gray-200 transition-all"
+            onClick={() => handleSelection(1)}
         >
           <div className="mb-4 text-center">
             <h2 className="text-3xl font-bold mb-2">{themes[0].name}</h2>
             <p className="text-lg">{themes[0].description}</p>
           </div>
-
-          <img 
-            src={themes[0].imageUrl} 
-            alt={`${themes[0].name} 이미지`}
-            className="w-32 h-32 object-cover"
+          <img
+              src={themes[0].imageUrl}
+              alt={`${themes[0].name} 이미지`}
+              className="w-32 h-32 object-cover"
           />
         </div>
 
         {/* 아래쪽 영역 */}
-        <div 
-          className="h-1/2 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-200 transition-all"
-          onClick={() => handleNavigation("/typeSelector3")} 
+        <div
+            className="h-1/2 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-200 transition-all"
+            onClick={() => handleSelection(2)}
         >
           {/* 도보 정보 */}
           <div className="mb-4 text-center">
@@ -79,13 +78,13 @@ const TypeSelector2: React.FC = () => {
           </div>
 
           {/* 도보 이미지 */}
-          <img 
-            src={themes[1].imageUrl} 
-            alt={`${themes[1].name} 이미지`}
-            className="w-32 h-32 object-cover"
+          <img
+              src={themes[1].imageUrl}
+              alt={`${themes[1].name} 이미지`}
+              className="w-32 h-32 object-cover"
           />
-           <NavButton direction="right" link="/typeSelector3" />
-           <NavButton direction="left" link="/typeSelector" />
+          <NavButton direction="right" link="/typeSelector3"/>
+          <NavButton direction="left" link="/typeSelector"/>
         </div>
       </div>
     </div>
