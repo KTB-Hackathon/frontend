@@ -2,6 +2,7 @@
   "name": "src",
   "private": true,
   "version": "0.0.0",
+  "proxy": "http://34.47.125.81:7777",
   "type": "module",
   "scripts": {
     "start": "vite",

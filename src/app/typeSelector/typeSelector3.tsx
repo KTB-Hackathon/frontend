@@ -29,16 +29,16 @@ const themes: Theme[] = [
 const TypeSelector3: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { selection1 } = location.state as { selection1: number };
+  // const { selection1 } = location.state as { selection1: number };
   const totalSlides = 5;
   const currentSlide = 4;
   
     // 페이지 이동 핸들러 함수
-  const handleFinalSelection = async (selection: number) => {
+  const handleFinalSelection = async () => {
     try {
       const response = await getPlaceList({
-        TRAVEL_STYL_1: selection1,
-        TRAVEL_STYL_5: selection
+        TRAVEL_STYL_1: 1,
+        TRAVEL_STYL_5: 2
       });
       navigate('/placeSelector', { state: { placeList: response.list } });
     } catch (error) {
@@ -65,7 +65,7 @@ const TypeSelector3: React.FC = () => {
         {/* 위쪽 영역 (자동차) */}
         <div
             className={`h-1/2 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-200 transition-all`}
-            onClick={() => handleFinalSelection(0)}
+            onClick={() => handleFinalSelection()}
         >
           {/* 자동차 정보 */}
           <div className="mb-4 text-center">
@@ -84,7 +84,7 @@ const TypeSelector3: React.FC = () => {
         {/* 아래쪽 영역 (도보) */}
         <div
             className={`h-1/2 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-200 transition-all`}
-            onClick={() => handleFinalSelection(1)}
+            onClick={() => handleFinalSelection()}
         >
           {/* 도보 정보 */}
           <div className="mb-4 text-center">

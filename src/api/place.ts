@@ -24,11 +24,13 @@ interface plannedPlaceRequest {
 interface messageResponse {
     content: string
 }
+
 export async function getPlaceList(request: userSelectedRequest): Promise<userSelectPlaceResponse> {
-    const res = await fetch(`${SERVER_URL}/recommend`, {
+    const res = await fetch(`http://34.47.125.81:7777/recommend`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            credentials: 'include',
         },
         body: JSON.stringify(request)
     })
@@ -40,10 +42,11 @@ export async function getPlaceList(request: userSelectedRequest): Promise<userSe
 }
 
 export async function getMessage(request: plannedPlaceRequest): Promise<messageResponse> {
-    const res = await fetch(`${SERVER_URL}/message`, {
+    const res = await fetch(`http://34.47.125.81:7777/message`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            credentials: 'include',
         },
         body: JSON.stringify(request)
     })
