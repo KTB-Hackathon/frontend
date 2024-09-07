@@ -45,7 +45,7 @@ pipeline {
                     sh "docker pull ${DOCKER_HUB_REPO}:latest"
 
                     // 컨테이너 실행 (로컬 포트 80 -> 컨테이너 8080)
-                    sh "docker run -d -—name ktbhackfront -p 5173:5173 -e API_KEY=${API_KEY}  ${DOCKER_HUB_REPO}:latest"
+                    sh "docker run -d -—name ktbhackfront -p 5173:5173 -e VITE_API_KEY=${API_KEY}  ${DOCKER_HUB_REPO}:latest"
 
                 }
             }
