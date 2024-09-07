@@ -5,12 +5,7 @@ import RecommendPlace from '../components/recommendPlace';
 import { getMessage } from '../api/place.ts';
 
 interface PlaceInfo {
-    imageURL: string;
-    address: string;
-    longitude: number;
-    latitude: number;
-    name: string;
-    description: string
+    [key: number]: any;  // 이제 어떤 숫자 키도 가능
 }
 
 interface PlaceSelectPageProps {
