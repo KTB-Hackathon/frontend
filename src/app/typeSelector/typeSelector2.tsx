@@ -27,7 +27,7 @@ const themes: Theme[] = [
 
 const TypeSelector2: React.FC = () => {
   const navigate = useNavigate();
-  const totalSlides = 6;
+  const totalSlides = 5;
   const currentSlide = 3;
 
   const handleNavigation = (path: string) => {

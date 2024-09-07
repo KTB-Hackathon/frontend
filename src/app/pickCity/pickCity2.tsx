@@ -4,7 +4,7 @@ import NavButton from '../../components/navButton';
 import CityButton from '../../components/cityButton';
 
 const PickCity: React.FC = () => {
-  const totalSlides = 6;
+  const totalSlides = 5;
   const currentSlide = 1;
 
   const cityButtons = [

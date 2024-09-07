@@ -26,7 +26,7 @@ const themes: Theme[] = [
 
 const TypeSelector: React.FC = () => {
   const navigate = useNavigate(); // 페이지 이동을 위한 useHistory 훅
-  const totalSlides = 6;
+  const totalSlides = 5;
   const currentSlide = 2;
   
   // 페이지 이동 핸들러 함수

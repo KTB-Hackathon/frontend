@@ -5,13 +5,11 @@ interface userSelectedRequest {
     TRAVEL_STYL_5: number
 }
 interface PlaceInfo {
-    fileName: string
-    address1: string // 도로명
-    address2: string // 구주소
-    longitude: number // 경도
-    latitude: number // 위도
+    imageURL: string
+    address: string
+    longitude: number
+    latitude: number
     name: string
-    description: string // 설명글 빼고 진행
 }
 
 interface userSelectPlaceResponse {

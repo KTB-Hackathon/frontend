@@ -27,7 +27,7 @@ const themes: Theme[] = [
 
 const TypeSelector3: React.FC = () => {
   const navigate = useNavigate();
-  const totalSlides = 6;
+  const totalSlides = 5;
   const currentSlide = 4;
   
     // 페이지 이동 핸들러 함수
