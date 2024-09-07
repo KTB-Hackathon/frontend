@@ -10,6 +10,7 @@ interface PlaceInfo {
     longitude: number;
     latitude: number;
     name: string;
+    description: string
 }
 
 interface PlaceSelectPageProps {
@@ -51,21 +52,27 @@ const PlaceSelectPage: React.FC<PlaceSelectPageProps> = ({ placeList }) => {
         }
     };
 
-    const currentPlaces = placeList.slice(currentPage * placesPerPage, (currentPage + 1) * placesPerPage);
 
+    const currentPlaces = placeList.slice(currentPage * placesPerPage, (currentPage + 1) * placesPerPage);
+    console.log(currentPlaces)
     return (
         <div className="bg-blue-900 min-h-screen px-8 py-10">
             <h1 className="text-white text-5xl text-center font-bold mb-16 my-14">장소를 선택해주세요</h1>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                {currentPlaces.map(place => (
-                    <RecommendPlace
-                        key={place.name}
-                        name={place.name}
-                        address={place.address}
-                        imageURL={place.imageURL}
-                        onSelect={() => handlePlaceSelect(place.name)}  // onSelect 함수 전달
-                    />
-                ))}
+                {currentPlaces.map(place => {
+                    console.log(place);  // 각 place 정보를 출력
+
+                    return (
+                        <RecommendPlace
+                            key={place[4]}
+                            name={place[4]}
+                            address={place[1]}
+                            imageURL={place[0]}
+                            onSelect={() => handlePlaceSelect(place[4])}  // onSelect 함수 전달
+                        />
+                    );
+                })}
+
             </div>
             <div className="flex justify-center items-center">
                 <button

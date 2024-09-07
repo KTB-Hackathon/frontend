@@ -10,6 +10,7 @@ interface message {
 const PlannedPlace:React.FC = () => {
     const location = useLocation();
     const { message } = location.state as message
+    console.log(message)
     return (
         <div className="bg-blue-900 min-h-screen px-8 py-10">
             <h1 className="text-white text-5xl text-center font-bold mb-16 my-14">내 여행지는?</h1>

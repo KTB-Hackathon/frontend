@@ -12,6 +12,7 @@ const RecommendPlace: React.FC<RecommendPlaceProps> = ({ name, address, imageURL
         event.preventDefault();
         onSelect();
     };
+    console.log("RecommendPlace props:", { name, address, imageURL });
 
     return (
         <div onClick={handleClick} className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer">

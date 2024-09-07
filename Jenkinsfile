@@ -5,6 +5,7 @@ pipeline {
         REPO = 'KTB-Hackathon/frontend'
         DOCKER_HUB_REPO = 'jonum12312/ktbhackfront'  // Docker Hub 저장소
         DOCKER_HUB_CREDENTIALS_ID = 'dockerhub'     // Jenkins에 저장된 Docker Hub 자격 증명
+        API_KEY = credentials('MAP_API_KEY')
     }
 
     stages {
@@ -44,7 +45,7 @@ pipeline {
                     sh "docker pull ${DOCKER_HUB_REPO}:latest"
 
                     // 컨테이너 실행 (로컬 포트 80 -> 컨테이너 8080)
-                    sh "docker run -d --name ktbhackfront -p 5173:5173 ${DOCKER_HUB_REPO}:latest"
+                    sh "docker run -d —name ktbhackfront -p 5173:5173 -e MAP_API_KEY=${API_KEY}  ${DOCKER_HUB_REPO}:latest"
 
                 }
             }
