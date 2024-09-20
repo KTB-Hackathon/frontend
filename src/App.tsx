@@ -8,7 +8,7 @@ import PickCity3 from './app/pickCity/pickCity3';
 import TypeSelector from './app/typeSelector/typeSelector';
 import TypeSelector2 from './app/typeSelector/typeSelector2';
 import TypeSelector3 from './app/typeSelector/typeSelector3'
-import Loading from './app/loading';
+import Loading from './components/loading.tsx';
 import PlaceSelectPage from './app/placeSelector'
 import PlannedPlace from "./app/plannedPlace";
 

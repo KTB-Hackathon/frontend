@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import RecommendPlace from '../components/recommendPlace';
 import { getMessage } from '../api/place.ts';
+import Loading from "../components/loading.tsx";
 
 interface PlaceInfo {
     [key: number]: any;  // 이제 어떤 숫자 키도 가능
@@ -15,6 +16,7 @@ interface PlaceSelectPageProps {
 const PlaceSelectPage: React.FC<PlaceSelectPageProps> = ({ placeList }) => {
     const [currentPage, setCurrentPage] = useState(0);
     const [selectedPlaces, setSelectedPlaces] = useState<string[]>([]);
+    const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
 
     const placesPerPage = 3;
@@ -34,6 +36,7 @@ const PlaceSelectPage: React.FC<PlaceSelectPageProps> = ({ placeList }) => {
     };
 
     const handleFinalSelection = async (finalSelection: string[]) => {
+        setIsLoading(true);
         try {
             const response = await getMessage({ content: finalSelection });
             navigate('/planned', {
@@ -45,17 +48,23 @@ const PlaceSelectPage: React.FC<PlaceSelectPageProps> = ({ placeList }) => {
         } catch (error) {
             console.error('메시지를 가져오는데 실패했습니다:', error);
         }
+        setIsLoading(false);
     };
 
 
     const currentPlaces = placeList.slice(currentPage * placesPerPage, (currentPage + 1) * placesPerPage);
+
+    if (isLoading) {
+        return <Loading />; // 로딩 중일 때 로딩 페이지 표시
+    }
+
     console.log(currentPlaces)
     return (
         <div className="bg-blue-900 min-h-screen px-8 py-10">
             <h1 className="text-white text-5xl text-center font-bold mb-16 my-14">장소를 선택해주세요</h1>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                 {currentPlaces.map(place => {
-                    console.log(place);  // 각 place 정보를 출력
+                    console.log(place);
 
                     return (
                         <RecommendPlace
@@ -63,7 +72,7 @@ const PlaceSelectPage: React.FC<PlaceSelectPageProps> = ({ placeList }) => {
                             name={place[4]}
                             address={place[1]}
                             imageURL={place[0]}
-                            onSelect={() => handlePlaceSelect(place[4])}  // onSelect 함수 전달
+                            onSelect={() => handlePlaceSelect(place[4])}
                         />
                     );
                 })}
